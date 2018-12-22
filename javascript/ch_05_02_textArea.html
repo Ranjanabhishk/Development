@@ -25,6 +25,7 @@
             event.preventDefault();
             var textareavalue = document.example.textarea.value;
             var array = textareavalue.split('\n')
+            
             var reverse = array.sort().join('\n');
             document.example.textarea.value = reverse;
         })

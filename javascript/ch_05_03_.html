@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>list of users</h1>
+        <form action="" name="filterText">
+            <input type="text" name="textfilter"/>
+        </form>
+        
+        <ul id="listofuser">
+            
+        </ul>
+    <script>
+
+    //  mutate == change
+    // immutate == not chnage
+
+        // var vehicle = ['car', 'train', 'bike', 'bus'];
+
+        // vehicle.push('bycyle');
+
+        // vehicle //mutate
+
+        // const x = 20;
+
+        // x = 21;
+        
+ // callback function
+ // a function which is passed as an argument of another function is called callback function.
+
+
+    var str = 'abcd';
+    var strArr =  str.split('');
+    
+   var reverseStr =  strArr.reverse().join('');
+//    alert(reverseStr);
+    //  document.getElementById('listofuser').innerHTML =    reverseStr;
+
+      var arrset =  ['Pankaj', 'sudhir', 'sunil', 'Shankar']
+/* debugger;
+        var arrlist = [];
+        arrset.forEach( function(value, index){
+            // console.log('inde', index, 'value', value);
+            var p = '<li>'+value+'</li>'
+            
+            //push all the list into the arrlist
+            arrlist.push(p);
+
+        })
+        var alllistitem = arrlist.join('');
+
+
+        // join
+        document.getElementById('listofuser').innerHTML =    alllistitem;
+
+        //innerhtml
+*/
+
+// find the index of the array element
+
+ // Array.prototype.filter
+
+ arrset.filter( function(name){
+     console.log(name);
+ })
+  
+
+
+
+
+
+
+  </script>
+
+
+</body>
+</html>

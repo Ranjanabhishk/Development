@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>list of users</h1>
+    <form action="" name="filterText">
+        <input type="text" name="textfilter" onkeyup="javascript: filterName(event)" />
+    </form>
+
+    <ul id="listofuser">
+
+    </ul>
+    <script>
+        var arrset = ['Pankaj', 'sudhir', 'sunil', 'Shankar'];
+
+        window.addEventListener('load', function () {
+            renderlist(arrset);
+        })
+
+        function filterName(e) {
+            var inputVal = e.currentTarget.value;
+            var filterArr = arrset.filter(function (name) {
+                return name.indexOf(inputVal) == 0;
+            })
+            renderlist(filterArr);
+        }
+
+/*
+        function renderlist(arr) {
+            var arrlist = [];
+            arr.forEach(function (value, index) {
+                var p = '<li>' + value + '</li>'
+                arrlist.push(p);
+            })
+            var alllistitem = arrlist.join('');
+            document.getElementById('listofuser').innerHTML = alllistitem;
+        }
+*/
+         function renderlist(arr) {
+            var arrlist = [];
+            arr.map((value) => arrlist.push('<li>' + value + '</li>'));
+            var alllistitem = arrlist.join('');
+            document.getElementById('listofuser').innerHTML = alllistitem;
+        }
+    </script>
+
+
+</body>
+
+</html>
