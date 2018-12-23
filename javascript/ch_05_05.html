@@ -1,0 +1,42 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+    //how to calculate the date and time 
+        var deapartureTime = new Date(2018, 12, 22, 15, 30);
+       
+        // rajasthan ==> 22-12-18 15:30
+
+        var arrivalTime = new Date(2018, 12, 23, 11, 30);
+        // delhi ==> 23-12-18 11:30
+
+        // diffirence 
+
+        var diff = arrivalTime.getTime() - deapartureTime.getTime();
+        var actDatediff = new Date(diff);
+
+       alert(diff/(1*60*60*1000));
+
+    // var newDate = new Date();
+    //     console.log(newDate);
+    // var timestamp = newDate.getTime();
+    //     console.log(timestamp);
+    //     var msDate = new Date(timestamp)
+    //     console.log(msDate);
+
+
+
+    </script>
+
+
+</body>
+
+</html>

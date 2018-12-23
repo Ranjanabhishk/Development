@@ -1,0 +1,95 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //     var arrset = ['Pankaj', 'Szdhir', 'Sunil', 'Shankar'];
+
+        //     var strData = "You are amazing";
+        //   var indexPosition =  arrset.indexOf('Szdhir');
+        //   var indexPositionStr= strData.indexOf('are')
+        //   alert(indexPositionStr);
+
+
+
+        //     var numbers = new Array(1, 2, 3, 4, 5);
+        //     debugger;
+        // function isLessThan3(value, index, array)
+        // {
+        // var returnValue = false;
+        // if (value <= 3)
+        // {
+        // returnValue = true;
+        // }
+        // return returnValue;
+        // }
+        // alert(numbers.every(isLessThan3));
+
+
+        // var numbers = new Array(1, 2, 3, 4, 5);
+        // debugger;
+        // for (var i = 0; i < numbers.length; i++ )
+        // {
+        // var result = numbers[i] * 2;
+        // alert(result);
+        // }
+
+        // var numbers = new Array(1, 2, 3, 4, 5);
+        // function doubleAndAlert(value, index, array)
+        // {
+        // var result = value * 2;
+        // alert(result);
+        // }
+        // numbers.forEach(doubleAndAlert);
+
+        // var numbers = new Array(1, 2, 3, 4, 5);
+        // function doubleAndAlert(value, index, array)
+        // {
+        // var result = value * 2;
+        // return result;
+        // }
+        // var doubledNumbers = numbers.map(doubleAndAlert);
+        // alert("The doubled numbers are: " + doubledNumbers);
+
+
+        var months = new Array("January", "February", "March", "April", "May", "June", "July",
+            "August", "September", "October", "November", "December");
+        var dateNow = new Date();
+        var yearNow = dateNow.getFullYear();
+        var monthNow = months[dateNow.getMonth()];
+        var dayNow = dateNow.getDate();
+        var daySuffix;
+        switch (dayNow) {
+            case 1:
+            case 21:
+            case 31:
+                daySuffix = "st";
+                break;
+            case 2:
+            case 22:
+                daySuffix = "nd";
+                break;
+            case 3:
+            case 23:
+                daySuffix = "rd";
+                break;
+            default:
+                daySuffix = "th";
+                break;
+        }
+        document.write("It is the " + dayNow + daySuffix + " day ");
+        document.write("in the month of " + monthNow);
+        document.write(" in the year " + yearNow);
+    </script>
+
+
+</body>
+
+</html>
