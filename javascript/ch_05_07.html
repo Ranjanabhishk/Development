@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes -->
+</head>
+<body>
+    <script>
+        function CustomerBooking (bookingId, customerName, film, showDate)
+            {
+            this.customerName = customerName;
+            this.bookingId = bookingId;
+            this.showDate = showDate;
+            this.film = film;
+            }
+
+       CustomerBooking.prototype.getCustomerName = function(){
+           return this.customerName;
+       }
+
+       CustomerBooking.prototype.setCustomerName = function(customerName){
+           this.customerName = customerName;
+       }
+
+       CustomerBooking.prototype.getFilm = function(){
+           return this.film;
+       }
+       CustomerBooking.prototype.setFilm = function(film){
+           this.film = film;
+       }
+       CustomerBooking.prototype.getShowDate = function(){
+           return this.showDate;
+       }
+       CustomerBooking.prototype.setShowDate = function(showDate){
+           this.showDate = showDate;
+       }
+       CustomerBooking.prototype.getBookingId = function(){
+           return this.bookingId;
+       }
+       CustomerBooking.prototype.setBookingId = function(bookingId){
+           this.bookingId = BookingId;
+       }
+
+       var c1  = new CustomerBooking(123, 'Bob Smith', 'Terminator', '10-Jan');
+       
+       c1.setCustomerName('Smith');
+       
+       document.write('Cutomer Name: '+c1.customerName+ "<br/>");
+
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+    
+        var date = new Date();
+        var minute = date.getMinutes();
+        var second = date.getSeconds();
+        var hours = date.getHours()
+
+        if(minute < 10) {
+            minute = '0'+minute;
+        }
+        
+        if(second < 10 ){
+            second = '0'+second;
+        }
+
+        function greetings(){
+            // var morning = hours < 10 ? 'Good Morning': ''; 
+            if( hours < 10 ) {
+                return 'Good Morning';
+            }
+            else if(hours < 17) {
+                return 'Good After Noon';
+            }
+            else {
+                return 'Good Evening';
+            }
+        }
+        if(hours < 10){
+            hours = '0'+hours;
+        }
+        document.write( '<div>Hello!' + greetings() +'<br/><p>Welcome to our site</p><p>The time is '+hours+':'+minute+'::'+second +'</p></div>')
+    </script>
+
+
+</body>
+
+</html>
