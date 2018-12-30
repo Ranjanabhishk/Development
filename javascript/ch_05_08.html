@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes -->
+</head>
+<body>
+    <script>
+
+        function Person(name, age)
+        {
+            this.name = name;
+            this.age = age;
+        }
+
+        Person.prototype.address = 'India'
+
+        Person.prototype.getName = function(){
+            return this.name;
+        }
+
+        Person.prototype.setName = function(name){
+            this.name = name;
+        }
+
+        Person.prototype.getAge = function(){
+            return this.age;
+        }
+
+        Person.prototype.setAge = function(age){
+            this.age = age;
+        }
+
+         var p1 = new Person('Ramesh', 25);
+         console.log(p1);
+         console.log(p1.name);
+
+        function Employee(empId, doj){
+            Person.call(this);
+            this.empId = empId;
+            this.doj = doj;
+        }
+
+        Employee.prototype = Object.create(Person.prototype)
+
+        var emp1 = new Employee(1100, 'dec-2012');
+        // emp1.name = 'Raju';
+        // emp1.age = 20;
+
+        console.log(emp1);
+        console.log(emp1.empId);
+             
+       function Student(){
+           Person.call(this);
+       }
+
+       Student.prototype = Object.create(Person.prototype)
+
+       var student1 = new Student();
+       console.log(student1);
+       student1.setAge(23);
+       student1.address;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes -->
+</head>
+<body>
+    <script>
+
+        function Person(name, age)
+        {
+            this.name = name;
+            this.age = age;
+        }
+
+        Person.prototype.address = 'India'
+
+        Person.prototype.getName = function(){
+            return this.name;
+        }
+
+        Person.prototype.setName = function(name){
+            this.name = name;
+        }
+
+        Person.prototype.getAge = function(){
+            return this.age;
+        }
+
+        Person.prototype.setAge = function(age){
+            this.age = age;
+        }
+
+         var p1 = new Person('Ramesh', 25);
+        //  console.log(p1);
+        //  console.log(p1.name);
+
+        function Employee(empId, doj){
+            Person.call(this);
+            this.empId = empId;
+            this.doj = doj;
+        }
+        
+        Employee.prototype = Object.create(Person.prototype)
+        
+        Employee.prototype.getEmpId = function(){
+            return this.empId;
+        }
+        Employee.prototype.setEmpId = function(empId){
+            this.empId = empId;
+        }
+        Employee.prototype.getDoj = function(){
+            return this.doj;
+        }
+        Employee.prototype.setDoj = function(doj){
+             this.doj = doj;
+        }
+
+        var emp1 = new Employee(1100, 'dec-2012');
+    
+        function CollectionEmployee(){
+            
+            this.emplist = new Array();
+        } 
+
+        CollectionEmployee.prototype.creatListOfEmployee = function(empId, doj){
+            this.emplist[empId] = new Employee(empId, doj);
+        }
+
+        CollectionEmployee.prototype.creatTableOfEmployee = function(){
+            console.log(this.emplist);
+
+            var employee;
+            var empTable = "<table border=1>";
+                debugger;
+            for (employee in this.emplist){
+                // employee.empId
+                // employee.doj
+                empTable += '<tr><td>'+employee[doj] + "</td>";
+                empTable +=  "<td>" + employee[empId] + "</td></tr>";
+            }
+
+             empTable += "</table>";
+        }
+
+       var listOfEmp = new CollectionEmployee();
+        
+        listOfEmp.creatListOfEmployee('list1', '12-Jan');
+
+       document.write(listOfEmp.creatTableOfEmployee());
+       
+    </script>
+</body>
+</html>
