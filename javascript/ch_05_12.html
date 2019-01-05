@@ -1,0 +1,111 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes -->
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        function EmployeeConstructor(emp_id, emp_doj, emp_salary, emp_name, emp_address){
+
+            this.emp_id = emp_id;
+            this.emp_doj = emp_doj;
+            this.emp_salary = emp_salary;
+            this.emp_name = emp_name;
+            this.emp_address = emp_address;
+        }
+        EmployeeConstructor.prototype.getEmp_id = function () {
+            return this.emp_id;
+        }
+        
+        EmployeeConstructor.prototype.setEmp_id = function (emp_id) {
+            this.emp_id = emp_id;
+        }
+
+        EmployeeConstructor.prototype.getEmp_doj = function () {
+            return this.emp_doj;
+        }
+        
+        EmployeeConstructor.prototype.setEmp_doj = function (emp_doj) {
+            this.emp_doj = emp_doj;
+        }
+        EmployeeConstructor.prototype.getEmp_salary = function () {
+            return this.emp_salary;
+        }
+        
+        EmployeeConstructor.prototype.setEmp_salary = function (emp_salary) {
+            this.emp_salary = emp_salary;
+        }
+        EmployeeConstructor.prototype.getEmp_name = function () {
+            return this.emp_name;
+        }
+        
+        EmployeeConstructor.prototype.setEmp_name = function (emp_name) {
+            this.emp_name = emp_name;
+        }
+        EmployeeConstructor.prototype.getEmp_address = function () {
+            return this.emp_address;
+        }
+        
+        EmployeeConstructor.prototype.setEmp_address = function (emp_address) {
+            this.emp_address = emp_address;
+        }
+        
+       
+        function EmployeeData()
+        {
+        this.employee = new Array();
+        }
+
+        EmployeeData.prototype.addEmployee = function(emp_id, emp_doj, emp_salary, emp_name, emp_address)
+            {
+            this.employee[emp_id] = new EmployeeConstructor(emp_id, emp_doj, emp_salary, emp_name, emp_address);
+            }
+
+            
+            EmployeeData.prototype.getEmployeeTable = function(){
+            
+            var empTableHTML = "<table border=1>";
+            // console.log(this.employee);
+                for (emp in this.employee)
+                    {
+                    empTableHTML += "<tr><td>";
+                    empTableHTML += this.employee[emp].getEmp_id();
+                    empTableHTML += "</td>";
+                    empTableHTML += "<td>";
+                    empTableHTML += this.employee[emp].getEmp_doj();
+                    empTableHTML += "</td>";
+                    empTableHTML += "<td>";
+                    empTableHTML += this.employee[emp].getEmp_salary();
+                    empTableHTML += "</td>";
+                    empTableHTML += "<td>";
+                    empTableHTML += this.employee[emp].getEmp_name();
+                    empTableHTML += "</td>";
+                    empTableHTML += "<td>";
+                    empTableHTML += this.employee[emp].getEmp_address();
+                    empTableHTML += "</td>";
+                    empTableHTML += "</tr>";
+                }
+            empTableHTML += "</table>";
+            return empTableHTML;
+            }
+            var printEmp = new EmployeeData();
+            printEmp.addEmployee(123, '4 jan 2019', 12000, 'sudhir', 'New ashok nagar');
+            printEmp.addEmployee(124, '4 jan 2019', 12000, 'sudhir', 'New ashok nagar');
+
+
+            document.write(printEmp.getEmployeeTable());
+
+
+       
+    </script>
+
+
+</body>
+
+</html>

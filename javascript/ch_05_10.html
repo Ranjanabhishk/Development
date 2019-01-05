@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes -->
+</head>
+<body>
+    <script>
+
+        // function Person(name, age){
+        //     this.name = name;
+        //     this.age = age;
+        // }
+
+
+        var p1 = {};
+
+            p1.name = "Oman";
+            p1.age = 35;
+
+
+         var p2 = {
+             name: "Abdul",
+             age: 25
+         }   
+        p2.address = "new Delhi";
+
+
+        function Person (name, age, address){
+            // var newPerson = {};
+                // var this = {};
+                this.name = name;
+                this.age = age;
+                this.address = address;
+            // return  newPerson;
+            // return this;
+        }
+
+        var p3 = new Person('Randhir', 25, 'East Delhi');
+        
+        console.log(p1)
+        console.log(p2)
+        console.log(p3)
+       
+
+    </script>
+</body>
+</html>

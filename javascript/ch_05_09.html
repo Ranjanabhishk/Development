@@ -70,24 +70,30 @@
         }
 
         CollectionEmployee.prototype.creatTableOfEmployee = function(){
-            console.log(this.emplist);
-
             var employee;
-            var empTable = "<table border=1>";
-                debugger;
-            for (employee in this.emplist){
-                // employee.empId
-                // employee.doj
-                empTable += '<tr><td>'+employee[doj] + "</td>";
-                empTable +=  "<td>" + employee[empId] + "</td></tr>";
-            }
 
-             empTable += "</table>";
+            for (employee in this.emplist){
+                debugger;
+                console.log(this, employee)
+                '<tr><td>'+employee+'</td></tr>'
+            }
+            // (this.employee).map( function(emp) {
+            //     console.log(emp);
+
+            // })
+            // var empTable = "<table border=1>";
+            //     debugger;
+          
+
+
+            //  empTable += "</table>";
         }
 
        var listOfEmp = new CollectionEmployee();
         
         listOfEmp.creatListOfEmployee('list1', '12-Jan');
+        listOfEmp.creatListOfEmployee('list2', '12-Jan');
+        listOfEmp.creatListOfEmployee('list3', '12-Jan');
 
        document.write(listOfEmp.creatTableOfEmployee());
        
